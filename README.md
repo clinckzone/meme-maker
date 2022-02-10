@@ -1,3 +1,9 @@
+# meme-maker
+A simple meme-maker application implemented in react. You can make memes and download them as images.
+
+![meme-maker](https://user-images.githubusercontent.com/28980632/153392281-1cf3ab09-5289-457c-b0f2-f881141dccdb.gif)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
