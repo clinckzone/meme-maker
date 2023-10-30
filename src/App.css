@@ -3,46 +3,46 @@ body {
 }
 
 .app-container {
-	display: grid;
-	grid-template-columns: 1fr 4fr;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }
 
 .sidebar-container {
-	grid-row: 1/2;
-	grid-column: 1/2;
-	background: grey;
-	color: white;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  background: grey;
+  color: white;
 }
 
 .sidebar-container h1 {
-	text-align: center;
-	margin-top: 18px;
+  text-align: center;
+  margin-top: 18px;
 }
 
 .sidebar-container p {
-	padding: 0 16px;
+  padding: 0 16px;
 }
 
 .sidebar-container hr {
-	width: 85%;
+  width: 85%;
 }
 
 .gallery-container {
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	grid-template-rows: repeat(3, 25vh);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(3, 25vh);
 }
 
 .image-container {
-	color: white;
-	text-align: center;
-	padding: 0 0 3px 3px;
+  color: white;
+  text-align: center;
+  padding: 0 0 3px 3px;
 }
 
 .modal-container {
-	width: fit-content;
+  width: fit-content;
 }
 
 .form-container {
-	margin-top: 18px;
+  margin-top: 18px;
 }
