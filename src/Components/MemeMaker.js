@@ -1,28 +1,30 @@
 import React from 'react';
 import { Modal, ModalHeader, ModalBody, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
+// Storing files in this manner has consequences
+// Source: https://create-react-app.dev/docs/using-the-public-folder/
 const photos = [
-  { src: '/images/vict-baby.png' },
-  { src: '/images/ned.jpeg' },
-  { src: '/images/devilgirl.jpg' },
-  { src: '/images/trump.jpg' },
-  { src: '/images/one-does-not.jpg' },
-  { src: '/images/dank.png' },
-  { src: '/images/boy.png' },
-  { src: '/images/sad.png' },
-  { src: '/images/wolf.png' },
-  { src: '/images/fry.jpg' },
-  { src: '/images/jobs.jpg' },
-  { src: '/images/phone.jpg' },
-  { src: '/images/oldie.png' },
-  { src: '/images/image.png' },
-  { src: '/images/doubt.png' },
-  { src: '/images/crying.png' },
-  { src: '/images/sponge.png' },
-  { src: '/images/dog.png' },
-  { src: '/images/frust.png' },
-  { src: '/images/web.png' },
-  { src: '/images/penguin.png' }
+  { src: 'images/vict-baby.png' },
+  { src: 'images/ned.jpeg' },
+  { src: 'images/devilgirl.jpg' },
+  { src: 'images/trump.jpg' },
+  { src: 'images/one-does-not.jpg' },
+  { src: 'images/dank.png' },
+  { src: 'images/boy.png' },
+  { src: 'images/sad.png' },
+  { src: 'images/wolf.png' },
+  { src: 'images/fry.jpg' },
+  { src: 'images/jobs.jpg' },
+  { src: 'images/phone.jpg' },
+  { src: 'images/oldie.png' },
+  { src: 'images/image.png' },
+  { src: 'images/doubt.png' },
+  { src: 'images/crying.png' },
+  { src: 'images/sponge.png' },
+  { src: 'images/dog.png' },
+  { src: 'images/frust.png' },
+  { src: 'images/web.png' },
+  { src: 'images/penguin.png' }
 ];
 
 class MemeMaker extends React.Component {
@@ -76,7 +78,7 @@ class MemeMaker extends React.Component {
   openImage = (index) => {
     const image = photos[index];
     const baseImage = new Image();
-    baseImage.src = image.src;
+    baseImage.src = `${process.env.PUBLIC_URL}/${image.src}`;
     const
       base64 = this.getBase64Image(baseImage);
     console.log(base64);
@@ -100,7 +102,7 @@ class MemeMaker extends React.Component {
   setHeightAndWidth = () => {
     const image = photos[this.state.currentImage];
     const baseImage = new Image();
-    baseImage.src = image.src;
+    baseImage.src = `${process.env.PUBLIC_URL}/${image.src}`;
     const widthHeightRatio = baseImage.width / baseImage.height;
     const newWidth = 600;
     const newHeight = newWidth / widthHeightRatio;
@@ -130,6 +132,7 @@ class MemeMaker extends React.Component {
 
   render() {
     var newDimension = this.setHeightAndWidth();
+
     return (
       <div className="app-container">
         <div className="sidebar-container">
@@ -148,7 +151,7 @@ class MemeMaker extends React.Component {
                   cursor: "pointer"
                 }}
                 alt={index}
-                src={photo.src}
+                src={`${process.env.PUBLIC_URL}/${photo.src}`}
                 onClick={() => { this.openImage(index) }} />
             </div>
           ))}
