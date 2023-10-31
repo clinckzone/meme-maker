@@ -31,3 +31,12 @@ npm run build
 - It correctly bundles React in production mode and optimizes the build for the best performance.
 - The build is minified and the filenames include the hashes.<br />
 - Your app is ready to be deployed!
+
+### Note
+
+Use node version 16 to run it locally because some packages are not compatible with the latest node version. Here's how you can use older node version:
+
+```js
+nvm install 16
+nvm use 16
+```
