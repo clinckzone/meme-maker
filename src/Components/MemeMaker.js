@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, ModalHeader, ModalBody, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, Button, Form, FormGroup, Label, Input, Spinner } from 'reactstrap';
 
 // Storing files in this manner has consequences
 // Source: https://create-react-app.dev/docs/using-the-public-folder/
@@ -41,7 +41,8 @@ class MemeMaker extends React.Component {
       topY: "10%",
       topX: "50%",
       bottomY: "90%",
-      bottomX: "50%"
+      bottomX: "50%",
+      isLoading: Array(photos.length).fill(true)
     };
     this.fontStyle = {
       fontFamily: "Impact",
@@ -144,15 +145,19 @@ class MemeMaker extends React.Component {
         <div className="gallery-container">
           {photos.map((photo, index) => (
             <div className="image-container" key={index}>
+              {this.state.isLoading[index] &&
+                <Spinner color='light' type='grow'></Spinner>}
               <img
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  cursor: "pointer"
-                }}
                 alt={index}
                 src={`${process.env.PUBLIC_URL}/${photo.src}`}
-                onClick={() => { this.openImage(index) }} />
+                style={{ display: this.state.isLoading[index] ? 'none' : 'block' }}
+                onClick={() => { this.openImage(index) }}
+                onLoad={() => this.setState((prevState) => {
+                  const isLoading = [...prevState.isLoading];
+                  isLoading[index] = false;
+                  return { isLoading };
+                })}
+              />
             </div>
           ))}
         </div>
