@@ -2,7 +2,7 @@
 
 A simple meme-maker application implemented in react. You can make memes and download them as images.
 
-<img src="https://user-images.githubusercontent.com/28980632/153392843-f56c57ce-a12d-4112-b80f-3a9792ba2e23.gif" height=100%>
+![ezgif com-video-to-gif](https://github.com/clinckzone/meme-maker/assets/28980632/5d10f463-cb51-49e7-b78d-02c3ec474fac)
 
 ## Setup
 
